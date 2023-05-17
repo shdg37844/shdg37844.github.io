@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-17 15:26:54" itemprop="dateModified" datetime="2023-05-17T15:26:54+08:00">2023-05-17</time>
+                <time title="修改时间：2023-05-17 15:30:44" itemprop="dateModified" datetime="2023-05-17T15:30:44+08:00">2023-05-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,10 @@
 <li>要实现交换节点，通过改变它们的next指针</li>
 </ol>
 <p><strong>第一步：cur.next &#x3D; post.next</strong><br>这一行将cur的next指针指向了post的下一个节点。  </p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">pre -&gt; cur -&gt; ...  (post的后续部分)</span><br><span class="line">       |</span><br><span class="line">       V</span><br><span class="line">    post -&gt; ...</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">**第二步：post.<span class="built_in">next</span> = cur**</span><br><span class="line">这一行将post的<span class="built_in">next</span>指针指向了cur。</span><br><span class="line">```py</span><br><span class="line">pre -&gt; cur -&gt; ...  (post的后续部分)</span><br><span class="line">       ^</span><br><span class="line">       |</span><br><span class="line">    post</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pre -&gt; cur -&gt; ...  (post的后续部分)</span><br><span class="line">       |</span><br><span class="line">       V</span><br><span class="line">    post -&gt; ...</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二步：post.next &#x3D; cur</strong><br>这一行将post的next指针指向了cur。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pre -&gt; cur -&gt; ...  (post的后续部分)</span><br><span class="line">       ^</span><br><span class="line">       |</span><br><span class="line">    post</span><br></pre></td></tr></table></figure>
 
 <p><strong>第三步：pre.next &#x3D; post</strong><br>这一行将pre的next指针指向了post。</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pre -&gt; post -&gt; cur -&gt; ...  (post的后续部分)</span><br></pre></td></tr></table></figure>
