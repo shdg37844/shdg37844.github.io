@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="目录：  704.二分查找 27.移除元素 每日总结   704.二分查找 题目：给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。  思路：无，直接看答案了。 代码：在力扣里写了左闭右闭区间的版本，这里粘贴上左闭右开的版本。目前自己写不出来，只能靠模仿重复。训练营答案：">
+  <meta name="description" content="目录：  454.四数相加II 383.赎金信 15.三数之和 18.四数之和 每日总结   454.四数相加II 题目：给你四个整数数组 nums1、nums2、nums3 和 nums4 ，数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：0 &lt;&#x3D; i, j, k, l &lt; nnums1[i] + nums2[j] + nums3[k] + nu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录算法训练营Day01|704.二分查找 27.移除元素">
-<meta property="og:url" content="http://example.com/2023/05/10/704-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/index.html">
+<meta property="og:title" content="代码随想录算法训练营Day07|454.四数相加II 383.赎金信 15.三数之和 18.四数之和">
+<meta property="og:url" content="http://example.com/2023/05/18/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day07-454-%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0II-383-%E8%B5%8E%E9%87%91%E4%BF%A1-15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C-18-%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/index.html">
 <meta property="og:site_name" content="鼠的博客">
-<meta property="og:description" content="目录：  704.二分查找 27.移除元素 每日总结   704.二分查找 题目：给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。  思路：无，直接看答案了。 代码：在力扣里写了左闭右闭区间的版本，这里粘贴上左闭右开的版本。目前自己写不出来，只能靠模仿重复。训练营答案：">
+<meta property="og:description" content="目录：  454.四数相加II 383.赎金信 15.三数之和 18.四数之和 每日总结   454.四数相加II 题目：给你四个整数数组 nums1、nums2、nums3 和 nums4 ，数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：0 &lt;&#x3D; i, j, k, l &lt; nnums1[i] + nums2[j] + nums3[k] + nu">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-10T07:08:03.000Z">
-<meta property="article:modified_time" content="2023-05-11T07:04:47.375Z">
+<meta property="article:published_time" content="2023-05-18T05:22:37.000Z">
+<meta property="article:modified_time" content="2023-05-19T10:37:21.761Z">
 <meta property="article:author" content="小鼠">
-<meta property="article:tag" content="二分法">
-<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="双指针法">
+<meta property="article:tag" content="哈希法">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/05/10/704-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/">
+<link rel="canonical" href="http://example.com/2023/05/18/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day07-454-%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0II-383-%E8%B5%8E%E9%87%91%E4%BF%A1-15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C-18-%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>代码随想录算法训练营Day01|704.二分查找 27.移除元素 | 鼠的博客</title>
+  <title>代码随想录算法训练营Day07|454.四数相加II 383.赎金信 15.三数之和 18.四数之和 | 鼠的博客</title>
   
 
 
@@ -191,7 +191,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/10/704-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/18/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day07-454-%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0II-383-%E8%B5%8E%E9%87%91%E4%BF%A1-15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C-18-%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230511134612.jpg">
@@ -204,7 +204,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          代码随想录算法训练营Day01|704.二分查找 27.移除元素
+          代码随想录算法训练营Day07|454.四数相加II 383.赎金信 15.三数之和 18.四数之和
         </h1>
 
         <div class="post-meta">
@@ -214,14 +214,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2023-05-10 15:08:03" itemprop="dateCreated datePublished" datetime="2023-05-10T15:08:03+08:00">2023-05-10</time>
+              <time title="创建时间：2023-05-18 13:22:37" itemprop="dateCreated datePublished" datetime="2023-05-18T13:22:37+08:00">2023-05-18</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-11 15:04:47" itemprop="dateModified" datetime="2023-05-11T15:04:47+08:00">2023-05-11</time>
+                <time title="修改时间：2023-05-19 18:37:21" itemprop="dateModified" datetime="2023-05-19T18:37:21+08:00">2023-05-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,49 +251,54 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
-
-<p><strong>目录</strong>：</p>
+        <p><strong>目录</strong>：</p>
 <ul>
-<li><a href="#binary-search">704.二分查找</a></li>
-<li><a href="#remove-element">27.移除元素</a></li>
+<li><a href="#fourSumCount">454.四数相加II</a></li>
+<li><a href="#canConstruct">383.赎金信</a></li>
+<li><a href="#threeSum">15.三数之和</a></li>
+<li><a href="#fourSum">18.四数之和</a></li>
 <li><a href="#daily-summary">每日总结</a></li>
 </ul>
-<p><a id="binary-search"></a></p>
-<h2 id="704-二分查找"><a href="#704-二分查找" class="headerlink" title="704.二分查找"></a>704.二分查找</h2><blockquote>
-<p><strong>题目</strong>：给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。</p>
+<p><a id="fourSumCount"></a></p>
+<h2 id="454-四数相加II"><a href="#454-四数相加II" class="headerlink" title="454.四数相加II"></a>454.四数相加II</h2><blockquote>
+<p><strong>题目</strong>：给你四个整数数组 nums1、nums2、nums3 和 nums4 ，数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：<br>0 &lt;&#x3D; i, j, k, l &lt; n<br>nums1[i] + nums2[j] + nums3[k] + nums4[l] &#x3D;&#x3D; 0</p>
 </blockquote>
-<p><strong>思路</strong>：无，直接看答案了。</p>
-<p><strong>代码</strong>：在力扣里写了左闭右闭区间的版本，这里粘贴上左闭右开的版本。目前自己写不出来，只能靠模仿重复。训练营答案：</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self,nums: <span class="type">List</span>[<span class="built_in">int</span>],target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        left, right = <span class="number">0</span>, <span class="built_in">len</span>(nums)  </span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> left &lt; right:  </span><br><span class="line">            middle = left + (right - left) // <span class="number">2</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> nums[middle] &gt; target:</span><br><span class="line">                right = middle  </span><br><span class="line">            <span class="keyword">elif</span> nums[middle] &lt; target:</span><br><span class="line">                left = middle + <span class="number">1</span>  </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> middle  <span class="comment"># 数组中找到目标值，直接返回下标</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>  <span class="comment"># 未找到目标值</span></span><br></pre></td></tr></table></figure>
-
+<p><strong>分析</strong>：<br>[chatgpt]<br>第一反应可能是暴力解法，也就是通过四重for循环来遍历。但是这种方法的时间复杂度太高（O(n^4)），不适合处理大规模数据。</p>
+<p>为了提高效率，可以考虑使用<strong>哈希表</strong>来存储某些中间结果。先遍历 nums1 和 nums2，计算所有可能的两数之和，然后将这个和以及它出现的次数存储到哈希表中。这样，哈希表的键就是两数之和，对应的值就是这个和出现的次数。</p>
+<p>然后再遍历 nums3 和 nums4，对于每一对数，计算它们的和的负值，然后在哈希表中查找这个负值。如果找到了，那么说明存在满足条件的四元组，而哈希表中对应的值就是这些四元组的数量。</p>
+<p><a id="canConstruct"></a></p>
+<h2 id="383-赎金信"><a href="#383-赎金信" class="headerlink" title="383.赎金信"></a>383.赎金信</h2><blockquote>
+<p><strong>题目</strong>：给你两个字符串：ransomNote 和 magazine ，判断 ransomNote 能不能由 magazine 里面的字符构成。如果可以，返回 true ；否则返回 false 。magazine 中的每个字符只能在 ransomNote 中使用一次。</p>
+</blockquote>
+<p><strong>分析</strong>：<br>此题和 242.有效的字母异位词 思路相同。</p>
 <p><strong>笔记</strong>：</p>
 <ol>
-<li><p>二分法前提条件：有序数组、无重复元素</p>
-</li>
-<li><p>二分法要注意两种写法，分别是：左闭右闭、左闭右开</p>
-</li>
-<li><p>middle公式：<code>middle = left + (right - left) // 2</code> ，这样写有助于防止整型溢出，而不是用这种写法(left + right) &#x2F;&#x2F; 2。</p>
-</li>
-<li><p>左闭右闭区间 [left, right]：<br><code>left, right = 0, len(nums) - 1</code><br><code>while (left &lt;= right)</code><br><code>left = middle+1 和 right = middle-1</code></p>
-<p>左闭右开区间 [left, right)：<br><code>left, right = 0, len(nums)</code><br><code>while (left &lt; right)</code><br><code>left = middle + 1 和 right = middle</code></p>
-</li>
+<li>collections.defaultdict 是 Python 的一个内置字典子类，它重载了一种特殊的方法，使得如果你试图访问或修改一个不存在的键（key）对应的值（value），这个字典会首先用一个默认的值类型来创建这个键。</li>
 </ol>
-<p><a id="remove-element"></a></p>
-<h2 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27.移除元素"></a>27.移除元素</h2><blockquote>
-<p><strong>题目</strong>：给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+<p><a id="threeSum"></a></p>
+<h2 id="15-三数之和"><a href="#15-三数之和" class="headerlink" title="15.三数之和"></a>15.三数之和</h2><blockquote>
+<p><strong>题目</strong>：给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i !&#x3D; j、i !&#x3D; k 且 j !&#x3D; k ，同时还满足 nums[i] + nums[j] + nums[k] &#x3D;&#x3D; 0 。请你返回所有和为 0 且不重复的三元组。</p>
 </blockquote>
-<p><strong>思路</strong>：啥都不懂，编辑出了以下这段。理所当然觉得把元素删掉就好了…</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeElement</span>(<span class="params">self, nums, val</span>):</span><br><span class="line">        i = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">if</span> nums[i] == val:</span><br><span class="line">                <span class="keyword">del</span> nums[i]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">len</span>(nums),nums)</span><br></pre></td></tr></table></figure>
-<p>训练营答案：<br> 双指针</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">removeElement</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], val: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 快慢指针</span></span><br><span class="line">        fast = <span class="number">0</span>  <span class="comment"># 快指针</span></span><br><span class="line">        slow = <span class="number">0</span>  <span class="comment"># 慢指针</span></span><br><span class="line">        size = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">while</span> fast &lt; size:  <span class="comment"># 不加等于是因为，a = size 时，nums[a] 会越界</span></span><br><span class="line">            <span class="comment"># slow 用来收集不等于 val 的值，如果 fast 对应值不等于 val，则把它与 slow 替换</span></span><br><span class="line">            <span class="keyword">if</span> nums[fast] != val:</span><br><span class="line">                nums[slow] = nums[fast]</span><br><span class="line">                slow += <span class="number">1</span></span><br><span class="line">            fast += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> slow</span><br></pre></td></tr></table></figure>
-
-<p><strong>笔记</strong>：</p>
+<p><strong>分析</strong>：</p>
 <ol>
-<li>数组理论基础：数组的元素在内存地址中是连续的,数组中的元素不能删除，只能覆盖，且物理空间没有改变。</li>
+<li>这道题和前面的四数相加II不同点在于，它不可以包含重复的三元组，如果用同样的哈希法计算，再去重，很容易超时。</li>
+<li>此题用排序 + 双指针法。 排序的目的是便于进行双指针搜索，并进行重复元素的剪枝。</li>
+</ol>
+<p><a id="fourSum"></a></p>
+<h2 id="18-四数之和"><a href="#18-四数之和" class="headerlink" title="18.四数之和"></a>18.四数之和</h2><blockquote>
+<p><strong>题目</strong>：给你一个由 n 个整数组成的数组 nums ，和一个目标值 target 。请你找出并返回满足下述全部条件且不重复的四元组 [nums[a], nums[b], nums[c], nums[d]] （若两个四元组元素一一对应，则认为两个四元组重复）。</p>
+</blockquote>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>使用排序 + 双指针法。<br>基本解法就是在 15.三数之和 的基础上再套一层for循环。</li>
+<li>三数之和与四数之和解题差异:   <ul>
+<li>在三数之和问题中，我们只需要确定一个数字,如 nums[i],然后在剩余的数组中使用双指针（left 和 right）来找到满足条件的二元组。在确定一个数字后，问题就被降低为了二数之和问题。  </li>
+<li>在四数之和问题中，我们需要确定两个数字（如 nums[i] 和 nums[k]），然后在剩余的数组中使用双指针（p 和 q）来找到满足条件的二元组。在确定两个数字后，问题就被降低为了二数之和问题。</li>
+</ul>
+</li>
 </ol>
 <p><a id="daily-summary"></a></p>
-<h2 id="每日总结"><a href="#每日总结" class="headerlink" title="每日总结"></a>每日总结</h2><p>今天是参加训练营的第一天，连python都是不久前才开始自学的（虽然之前上过一学期的课，但是非常基础），更不用说接触算法了。以乌龟爬行般的速度大致了解了自己正在学习以及即将要学的东西的概念后，我还是下决心逼自己一把。60天时间，不奢望自己能跑起来，也很可能走不起来，但起码要站起来吧！！！</p>
+<h2 id="每日总结"><a href="#每日总结" class="headerlink" title="每日总结"></a>每日总结</h2><p>无。</p>
 
     </div>
 
@@ -303,8 +308,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" rel="tag"># 二分法</a>
-              <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag"># 双指针</a>
+              <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88%E6%B3%95/" rel="tag"># 双指针法</a>
+              <a href="/tags/%E5%93%88%E5%B8%8C%E6%B3%95/" rel="tag"># 哈希法</a>
           </div>
 
         
@@ -312,11 +317,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2023/05/11/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day02-977-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9-209-%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84-59-%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/" rel="next" title="代码随想录算法训练营Day02|977.有序数组的平方 209.长度最小的子数组 59.螺旋矩阵||">
-      代码随想录算法训练营Day02|977.有序数组的平方 209.长度最小的子数组 59.螺旋矩阵|| <i class="fa fa-chevron-right"></i>
+    <a href="/2023/05/17/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day05-242-%E6%9C%89%E6%95%88%E5%BE%97%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D-349-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86-202-%E5%BF%AB%E4%B9%90%E6%95%B0-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" rel="prev" title="代码随想算法训练营Day06|242.有效得字母异位词 349.两个数组的交集 202.快乐数 1.两数之和">
+      <i class="fa fa-chevron-left"></i> 代码随想算法训练营Day06|242.有效得字母异位词 349.两个数组的交集 202.快乐数 1.两数之和
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -375,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#704-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-number">1.</span> <span class="nav-text">704.二分查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#27-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-number">2.</span> <span class="nav-text">27.移除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">每日总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#454-%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0II"><span class="nav-number">1.</span> <span class="nav-text">454.四数相加II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#383-%E8%B5%8E%E9%87%91%E4%BF%A1"><span class="nav-number">2.</span> <span class="nav-text">383.赎金信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">3.</span> <span class="nav-text">15.三数之和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">4.</span> <span class="nav-text">18.四数之和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">每日总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
