@@ -184,6 +184,137 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/19/344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2-541-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2II-%E5%89%91%E6%8C%87Offer05-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC-151-%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E8%AF%8D-%E5%89%91%E6%8C%87Offer58-II-%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230511134612.jpg">
+      <meta itemprop="name" content="小鼠">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/05/19/344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2-541-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2II-%E5%89%91%E6%8C%87Offer05-%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC-151-%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E8%AF%8D-%E5%89%91%E6%8C%87Offer58-II-%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">代码随想录算法训练营Day08|344.反转字符串 541.反转字符串II 剑指Offer05.替换空格 151.翻转字符串里的词 剑指Offer58-II.左旋转字符串</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-05-19 18:41:40" itemprop="dateCreated datePublished" datetime="2023-05-19T18:41:40+08:00">2023-05-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-05-20 17:24:54" itemprop="dateModified" datetime="2023-05-20T17:24:54+08:00">2023-05-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">刷题记录</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>目录</strong>：</p>
+<ul>
+<li><a href="#344%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2">344.反转字符串</a></li>
+<li><a href="#541%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2ii">541.反转字符串II</a></li>
+<li><a href="#%E5%89%91%E6%8C%87offer05%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC">剑指Offer05.替换空格</a></li>
+<li><a href="#151%E7%BF%BB%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E8%AF%8D">151.翻转字符串里的词</a></li>
+<li><a href="#%E5%89%91%E6%8C%87offer58-ii%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2">剑指Offer58-II.左旋转字符串</a></li>
+<li><a href="#%E6%AF%8F%E6%97%A5%E6%80%BB%E7%BB%93">每日总结</a></li>
+</ul>
+<p><a id="reverseString"></a></p>
+<h2 id="344-反转字符串"><a href="#344-反转字符串" class="headerlink" title="344.反转字符串"></a>344.反转字符串</h2><blockquote>
+<p><strong>题目</strong>：编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 s 的形式给出。不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。</p>
+</blockquote>
+<p><strong>分析</strong>：  </p>
+<ol>
+<li>与反转链表一样，使用双指针法。反转字符串比反转链表还要简单一些。</li>
+<li>但是反转链表使用迭代法的双指针，而反转字符串使用左右指针，原因：<br>它们的底层数据结构不同<ul>
+<li>字符串可以视为一个字符数组，可以直接通过<strong>索引</strong>来访问数组的任意位置。</li>
+<li>链表是线性存储结构，没有索引，我们不能随机访问链表的任意位置，只能从头部一次遍历到尾部。</li>
+</ul>
+</li>
+</ol>
+<p><a id="reverseStr"></a></p>
+<h2 id="541-反转字符串II"><a href="#541-反转字符串II" class="headerlink" title="541.反转字符串II"></a>541.反转字符串II</h2><blockquote>
+<p><strong>题目</strong>：给定一个字符串 s 和一个整数 k，从字符串开头算起，每计数至 2k 个字符，就反转这 2k 字符中的前 k 个字符。  如果剩余字符少于 k 个，则将剩余字符全部反转；如果剩余字符小于 2k 但大于或等于 k 个，则反转前 k 个字符，其余字符保持原样。</p>
+</blockquote>
+<p><strong>分析</strong>：</p>
+<ul>
+<li>要用到切片操作。</li>
+<li>要把字符串转换成列表数组：为了能够修改字符串中的字符，因为在python中，字符串是不可变的。</li>
+</ul>
+<p><strong>笔记</strong>：<br>join() 是字符串的一个方法：<br>调用形式：<code>str.join(iterable)</code>   str 是连接符，iterable 是可迭代对象<br>例如，如果 <code>res = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code>，那么<code> &#39;&#39;.join(res)</code> 会返回 <code>&#39;abc&#39;</code>。 </p>
+<p><a id="replaceSpace"></a></p>
+<h2 id="剑指Offer05-替换空格"><a href="#剑指Offer05-替换空格" class="headerlink" title="剑指Offer05.替换空格"></a>剑指Offer05.替换空格</h2><blockquote>
+<p><strong>题目</strong>：请实现一个函数，把字符串 s 中的每个空格替换成”%20”。</p>
+</blockquote>
+<p><strong>自己尝试写的</strong>：这种写法 时间复杂度和空间复杂度都为O(n)</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">replaceSpace</span>(<span class="params">self, s</span>):</span><br><span class="line">        res = <span class="built_in">list</span>(s)</span><br><span class="line">        n = <span class="built_in">len</span>(s)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> res[i] == <span class="string">&#x27; &#x27;</span>:</span><br><span class="line">                res[i] = <span class="string">&#x27;%20&#x27;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(res)</span><br></pre></td></tr></table></figure>
+<p><strong>答案思路</strong>：</p>
+<ol>
+<li>这个问题的核心在于要在原地（不使用额外的空间）替换字符串中的所有空格为 “%20”。</li>
+<li>首先根据空格的数量扩展列表的大小，然后<strong>用双指针从后向前</strong>替换空格为 “%20”。这种方式可以避免在列表中创建额外的字符串对象，所以在内存使用上更为高效。</li>
+</ol>
+<p><strong>笔记</strong>：</p>
+<ul>
+<li>Python 列表的切片操作是左闭右开的。</li>
+</ul>
+<p><a id="reverseWords"></a></p>
+<h2 id="151-翻转字符串里的词"><a href="#151-翻转字符串里的词" class="headerlink" title="151.翻转字符串里的词"></a>151.翻转字符串里的词</h2><blockquote>
+<p><strong>题目</strong>：给你一个字符串 s ，请你反转字符串中单词的顺序。</p>
+</blockquote>
+<p><strong>分析</strong>：要求：不要使用辅助空间，空间复杂度要求为O(1)<br>步骤：<br>1.去除多余的空格<br>2.翻转字符数组<br>3.翻转每个单词<br>4.翻转字符串里的单词</p>
+<p><a id=""></a></p>
+<h2 id="剑指Offer58-II-左旋转字符串"><a href="#剑指Offer58-II-左旋转字符串" class="headerlink" title="剑指Offer58-II.左旋转字符串"></a>剑指Offer58-II.左旋转字符串</h2><blockquote>
+<p><strong>题目</strong>：字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如，输入字符串”abcdefg”和数字2，该函数将返回左旋转两位得到的结果”cdefgab”。</p>
+</blockquote>
+<p><a id="daily-summary"></a></p>
+<h2 id="每日总结"><a href="#每日总结" class="headerlink" title="每日总结"></a>每日总结</h2><p>反转字符串II想半天还是想不出来，看答案了，进展为零。<br>最后一题还没做，之后补。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/18/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day07-454-%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0II-383-%E8%B5%8E%E9%87%91%E4%BF%A1-15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C-18-%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -995,7 +1126,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
