@@ -184,6 +184,108 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/31/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day18-513-%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC-112-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-113-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8CII-106-%E4%BB%8E%E4%B8%AD%E5%BA%8F%E4%B8%8E%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91-105-%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230511134612.jpg">
+      <meta itemprop="name" content="小鼠">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="鼠的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/05/31/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day18-513-%E6%89%BE%E6%A0%91%E5%B7%A6%E4%B8%8B%E8%A7%92%E7%9A%84%E5%80%BC-112-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8C-113-%E8%B7%AF%E5%BE%84%E6%80%BB%E5%92%8CII-106-%E4%BB%8E%E4%B8%AD%E5%BA%8F%E4%B8%8E%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91-105-%E4%BB%8E%E5%89%8D%E5%BA%8F%E4%B8%8E%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">代码随想录算法训练营Day18|513.找树左下角的值 112.路径总和 113.路径总和II 106.从中序与后序遍历序列构造二叉树 105.从前序与中序遍历序列构造二叉树</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-05-31 18:14:00" itemprop="dateCreated datePublished" datetime="2023-05-31T18:14:00+08:00">2023-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-01 20:28:54" itemprop="dateModified" datetime="2023-06-01T20:28:54+08:00">2023-06-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">刷题记录</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>目录</strong>：</p>
+<ul>
+<li><a href="#findBottomLeftValue">513.找树左下角的值</a></li>
+<li><a href="#hasPathSum">112.路径总和 113.路径总和II</a></li>
+<li><a href="#">106.从中序与后序遍历序列构造二叉树 105.从前序与中序遍历序列构造二叉树</a></li>
+<li><a href="#daily-summary">每日总结</a></li>
+</ul>
+<p><a id="findBottomLeftValue"></a></p>
+<h2 id="513-找树左下角的值"><a href="#513-找树左下角的值" class="headerlink" title="513.找树左下角的值"></a>513.找树左下角的值</h2><blockquote>
+<p><strong>题目</strong>：给定一个二叉树的根节点 root，请找出该二叉树的最底层最左边节点的值。</p>
+</blockquote>
+<p><strong>分析</strong>：</p>
+<ol>
+<li>用递归+回溯。回溯过程靠 <code>depth += 1</code> 和 <code>depth -= 1</code> 来完成。</li>
+</ol>
+<p><strong>笔记</strong>：</p>
+<p><a id="hasPathSum"></a></p>
+<h2 id="112-路径总和-113-路径总和II"><a href="#112-路径总和-113-路径总和II" class="headerlink" title="112.路径总和 113.路径总和II"></a>112.路径总和 113.路径总和II</h2><blockquote>
+<p><strong>题目</strong>：给你二叉树的根节点 root 和一个表示目标和的整数 targetSum 。判断该树中是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和 targetSum 。如果存在，返回 true ；否则，返回 false 。</p>
+</blockquote>
+<p><strong>分析</strong>：</p>
+<p><strong>笔记</strong>：<br><a id=""></a></p>
+<h2 id="106-从中序与后序遍历序列构造二叉树-105-从前序与中序遍历序列构造二叉树"><a href="#106-从中序与后序遍历序列构造二叉树-105-从前序与中序遍历序列构造二叉树" class="headerlink" title="106.从中序与后序遍历序列构造二叉树 105.从前序与中序遍历序列构造二叉树"></a>106.从中序与后序遍历序列构造二叉树 105.从前序与中序遍历序列构造二叉树</h2><blockquote>
+<p><strong>题目</strong>：</p>
+</blockquote>
+<p><strong>分析</strong>：</p>
+<p><strong>笔记</strong>：</p>
+<p><a id="daily-summary"></a></p>
+<h2 id="每日总结"><a href="#每日总结" class="headerlink" title="每日总结"></a>每日总结</h2><p>昨天以为懂了，今天一看又不懂了，每天就是似懂非懂。命运之花的最后一瓣到底会是懂还是不懂呢。。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/29/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day17-110-%E5%B9%B3%E8%A1%A1%E4%B8%BA%E5%8F%89%E6%A0%91-257-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%89%80%E6%9C%89%E8%B7%AF%E5%BE%84-404-%E5%B7%A6%E5%8F%B6%E5%AD%90%E4%B9%8B%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -337,7 +439,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-29 23:18:39" itemprop="dateModified" datetime="2023-05-29T23:18:39+08:00">2023-05-29</time>
+                <time title="修改时间：2023-06-01 20:28:50" itemprop="dateModified" datetime="2023-06-01T20:28:50+08:00">2023-06-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -371,6 +473,9 @@
 <h2 id="104-二叉树的最大深度"><a href="#104-二叉树的最大深度" class="headerlink" title="104.二叉树的最大深度"></a>104.二叉树的最大深度</h2><blockquote>
 <p><strong>题目</strong>：给定一个二叉树，找出其最大深度。二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。说明: 叶子节点是指没有子节点的节点。</p>
 </blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pythontutor.com/visualize.html#code=class%20TreeNode%3A%0A%20%20%20%20def%20__init__%28self,%20val%3D0,%20left%3DNone,%20right%3DNone%29%3A%0A%20%20%20%20%20%20%20%20self.val%20%3D%20val%0A%20%20%20%20%20%20%20%20self.left%20%3D%20left%0A%20%20%20%20%20%20%20%20self.right%20%3D%20right%0A%20%20%20%20%20%20%20%20%0Adef%20maxDepth%28root%29%3A%0A%20%20%20%20if%20root%20is%20None%3A%20return%200%0A%20%20%20%20l_depth%20%3D%20maxDepth%28root.left%29%0A%20%20%20%20r_depth%20%3D%20maxDepth%28root.right%29%0A%20%20%20%20return%20max%28l_depth,%20r_depth%29%20%2B%201%0A%0Aroot%20%3D%20TreeNode%283,TreeNode%289%29,TreeNode%2820,TreeNode%2815%29,TreeNode%287%29%29%29%0AmaxDepth%28root%29%0A%0A&cumulative=false&curInstr=44&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">pythontutor可视化</a></li>
+</ul>
 <p><strong>分析</strong>：</p>
 <ol>
 <li>区分二叉树的高度和深度：本题可以使用前序（中左右），也可以使用后序遍历（左右中），使用前序求的就是深度，使用后序求的是高度。</li>
@@ -1185,127 +1290,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/05/18/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day07-454-%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0II-383-%E8%B5%8E%E9%87%91%E4%BF%A1-15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C-18-%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230511134612.jpg">
-      <meta itemprop="name" content="小鼠">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="鼠的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/18/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E7%AE%97%E6%B3%95%E8%AE%AD%E7%BB%83%E8%90%A5Day07-454-%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0II-383-%E8%B5%8E%E9%87%91%E4%BF%A1-15-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C-18-%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/" class="post-title-link" itemprop="url">代码随想录算法训练营Day07|454.四数相加II 383.赎金信 15.三数之和 18.四数之和</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-05-18 13:22:37" itemprop="dateCreated datePublished" datetime="2023-05-18T13:22:37+08:00">2023-05-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-19 18:37:21" itemprop="dateModified" datetime="2023-05-19T18:37:21+08:00">2023-05-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">刷题记录</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>目录</strong>：</p>
-<ul>
-<li><a href="#fourSumCount">454.四数相加II</a></li>
-<li><a href="#canConstruct">383.赎金信</a></li>
-<li><a href="#threeSum">15.三数之和</a></li>
-<li><a href="#fourSum">18.四数之和</a></li>
-<li><a href="#daily-summary">每日总结</a></li>
-</ul>
-<p><a id="fourSumCount"></a></p>
-<h2 id="454-四数相加II"><a href="#454-四数相加II" class="headerlink" title="454.四数相加II"></a>454.四数相加II</h2><blockquote>
-<p><strong>题目</strong>：给你四个整数数组 nums1、nums2、nums3 和 nums4 ，数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：<br>0 &lt;&#x3D; i, j, k, l &lt; n<br>nums1[i] + nums2[j] + nums3[k] + nums4[l] &#x3D;&#x3D; 0</p>
-</blockquote>
-<p><strong>分析</strong>：<br>[chatgpt]<br>第一反应可能是暴力解法，也就是通过四重for循环来遍历。但是这种方法的时间复杂度太高（O(n^4)），不适合处理大规模数据。</p>
-<p>为了提高效率，可以考虑使用<strong>哈希表</strong>来存储某些中间结果。先遍历 nums1 和 nums2，计算所有可能的两数之和，然后将这个和以及它出现的次数存储到哈希表中。这样，哈希表的键就是两数之和，对应的值就是这个和出现的次数。</p>
-<p>然后再遍历 nums3 和 nums4，对于每一对数，计算它们的和的负值，然后在哈希表中查找这个负值。如果找到了，那么说明存在满足条件的四元组，而哈希表中对应的值就是这些四元组的数量。</p>
-<p><a id="canConstruct"></a></p>
-<h2 id="383-赎金信"><a href="#383-赎金信" class="headerlink" title="383.赎金信"></a>383.赎金信</h2><blockquote>
-<p><strong>题目</strong>：给你两个字符串：ransomNote 和 magazine ，判断 ransomNote 能不能由 magazine 里面的字符构成。如果可以，返回 true ；否则返回 false 。magazine 中的每个字符只能在 ransomNote 中使用一次。</p>
-</blockquote>
-<p><strong>分析</strong>：<br>此题和 242.有效的字母异位词 思路相同。</p>
-<p><strong>笔记</strong>：</p>
-<ol>
-<li>collections.defaultdict 是 Python 的一个内置字典子类，它重载了一种特殊的方法，使得如果你试图访问或修改一个不存在的键（key）对应的值（value），这个字典会首先用一个默认的值类型来创建这个键。</li>
-</ol>
-<p><a id="threeSum"></a></p>
-<h2 id="15-三数之和"><a href="#15-三数之和" class="headerlink" title="15.三数之和"></a>15.三数之和</h2><blockquote>
-<p><strong>题目</strong>：给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i !&#x3D; j、i !&#x3D; k 且 j !&#x3D; k ，同时还满足 nums[i] + nums[j] + nums[k] &#x3D;&#x3D; 0 。请你返回所有和为 0 且不重复的三元组。</p>
-</blockquote>
-<p><strong>分析</strong>：</p>
-<ol>
-<li>这道题和前面的四数相加II不同点在于，它不可以包含重复的三元组，如果用同样的哈希法计算，再去重，很容易超时。</li>
-<li>此题用排序 + 双指针法。 排序的目的是便于进行双指针搜索，并进行重复元素的剪枝。</li>
-</ol>
-<p><a id="fourSum"></a></p>
-<h2 id="18-四数之和"><a href="#18-四数之和" class="headerlink" title="18.四数之和"></a>18.四数之和</h2><blockquote>
-<p><strong>题目</strong>：给你一个由 n 个整数组成的数组 nums ，和一个目标值 target 。请你找出并返回满足下述全部条件且不重复的四元组 [nums[a], nums[b], nums[c], nums[d]] （若两个四元组元素一一对应，则认为两个四元组重复）。</p>
-</blockquote>
-<p><strong>分析</strong>：</p>
-<ol>
-<li>使用排序 + 双指针法。<br>基本解法就是在 15.三数之和 的基础上再套一层for循环。</li>
-<li>三数之和与四数之和解题差异:   <ul>
-<li>在三数之和问题中，我们只需要确定一个数字,如 nums[i],然后在剩余的数组中使用双指针（left 和 right）来找到满足条件的二元组。在确定一个数字后，问题就被降低为了二数之和问题。  </li>
-<li>在四数之和问题中，我们需要确定两个数字（如 nums[i] 和 nums[k]），然后在剩余的数组中使用双指针（p 和 q）来找到满足条件的二元组。在确定两个数字后，问题就被降低为了二数之和问题。</li>
-</ul>
-</li>
-</ol>
-<p><a id="daily-summary"></a></p>
-<h2 id="每日总结"><a href="#每日总结" class="headerlink" title="每日总结"></a>每日总结</h2><p>无。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1377,7 +1361,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
