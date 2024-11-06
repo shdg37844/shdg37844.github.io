@@ -1915,7 +1915,6 @@ article.md-text.content+.related-wrap {
   }
 }
 .banner {
-  border-radius: 12px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -1925,7 +1924,7 @@ article.md-text.content+.related-wrap {
   height: 220px;
 }
 .banner.top {
-  border-radius: 16px;
+  border-radius: 10px 10px 0 0;
 }
 @media screen and (max-width: 667px) {
   .banner {
@@ -6469,7 +6468,7 @@ body>.sitebg .siteblur:hover {
   word-break: break-word;
 }
 .md-text.excerpt p {
-  font-size: 0.875rem;
+  font-size: 17px;
   margin: 1em 0;
 }
 .md-text.content {
@@ -6479,7 +6478,7 @@ body>.sitebg .siteblur:hover {
   overflow: hidden;
   background: #fff;
   box-shadow: 0px 10px 20px rgba(0,0,0,0.04), 0px 2px 6px rgba(0,0,0,0.04), 0px 0px 1px rgba(0,0,0,0.04);
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
 }
 .l_body[text-indent] .md-text.content p:not([class]) {
   text-indent: calc(var(--fsp) * 2);
@@ -6535,7 +6534,7 @@ body>.sitebg .siteblur:hover {
 .md-text ul ol,
 .md-text ol ol {
   --fsp: calc(17px - 1px);
-  font-size: var(--fsp);
+  font-size: 17px;
   line-height: 1.5;
 }
 .md-text blockquote p code,
@@ -6547,7 +6546,7 @@ body>.sitebg .siteblur:hover {
 .md-text blockquote ol code,
 .md-text ul ol code,
 .md-text ol ol code {
-  font-size: inherit;
+  font-size: 17px;
   padding: 0;
   background: none;
 }
@@ -6650,7 +6649,7 @@ body>.sitebg .siteblur:hover {
   margin-top: 0;
 }
 .md-text p {
-  font-size: var(--fsp);
+  font-size: 17px;
 }
 .md-text pre {
   -webkit-font-smoothing: auto;
@@ -6702,6 +6701,15 @@ li:not([class]) a:not([class]):has(img):hover,
 p:not([class]) a:not([class]):has(img):hover,
 table a:not([class]):has(img):hover {
   background: none;
+}
+ul > li {
+  font-size: 17px;
+}
+ol > li {
+  font-size: 17px;
+}
+.toc li {
+  font-size: 15px;
 }
 .md-text .aplayer {
   border-radius: 12px;
